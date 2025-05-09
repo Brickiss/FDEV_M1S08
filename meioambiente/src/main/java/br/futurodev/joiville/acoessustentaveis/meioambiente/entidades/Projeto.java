@@ -1,7 +1,7 @@
 package br.futurodev.joiville.acoessustentaveis.meioambiente.entidades;
 
 import jakarta.persistence.*;
-        import lombok.Getter;
+import lombok.Getter;
 import lombok.Setter;
 
 @Getter
@@ -28,5 +28,4 @@ public class Projeto {
     @ManyToOne
     @JoinColumn(name = "organizacao_id", nullable = false)
     private Organizacao organizacao;
-
 }

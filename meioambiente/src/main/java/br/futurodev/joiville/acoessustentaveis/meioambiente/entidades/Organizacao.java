@@ -18,5 +18,4 @@ public class Organizacao {
     private String nome;
 
     private String contato;
-
 }
