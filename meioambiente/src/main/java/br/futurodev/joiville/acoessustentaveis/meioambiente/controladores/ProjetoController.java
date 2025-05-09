@@ -61,4 +61,14 @@ public class ProjetoController {
         projetoService.delete(id);
         return ResponseEntity.noContent().build();
     }
+    @Autowired
+    private ProjetoService ProjetoService;
+
+    @GetMapping("/projetos")
+    public ResponseEntity<List<Projeto>> buscarProjetos(
+            @RequestParam(value = "nome", required = false) String nome,
+            @RequestParam(value = "contato", required = false) String contato) {
+        List<Projeto> projetos = projetoService.buscarProjetos(nome, contato);
+        return ResponseEntity.ok(projetos);
+    }
 }

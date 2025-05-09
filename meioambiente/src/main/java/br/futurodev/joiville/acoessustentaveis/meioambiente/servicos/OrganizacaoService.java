@@ -29,4 +29,9 @@ public class OrganizacaoService {
     public void delete(Long id) {
         organizacaoRepository.deleteById(id);
     }
+
+    public List<Organizacao> buscarOrganizacoes(String nome, String contato) {
+        return organizacaoRepository.findAllOptionalFilter(nome, contato);
+    }
+
 }

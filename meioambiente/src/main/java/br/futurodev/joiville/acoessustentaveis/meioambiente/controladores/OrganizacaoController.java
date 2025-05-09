@@ -48,4 +48,15 @@ public class OrganizacaoController {
         organizacaoService.delete(id);
         return ResponseEntity.noContent().build();
     }
+    @Autowired
+    private OrganizacaoService organizacaoService;
+
+    @GetMapping("/organizacoes")
+    public ResponseEntity<List<Organizacao>> buscarOrganizacoes(
+            @RequestParam(value = "nome", required = false) String nome,
+            @RequestParam(value = "contato", required = false) String contato) {
+        List<Organizacao> organizacoes = organizacaoService.buscarOrganizacoes(nome, contato);
+        return ResponseEntity.ok(organizacoes);
+    }
+
 }
